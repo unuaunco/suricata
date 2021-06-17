@@ -41,6 +41,7 @@
 #include "output.h"
 
 #include "alert-fastlog.h"
+#include "alert-hpfeeds.h"
 #include "alert-debuglog.h"
 #include "alert-prelude.h"
 #include "alert-syslog.h"
@@ -1040,6 +1041,9 @@ void OutputRegisterLoggers(void)
 {
     /* custom format log*/
     LogCustomFormatRegister();
+
+    /* hpfeeds log */
+    TmModuleAlertHPFeeds();
 
     LuaLogRegister();
     /* fast log */

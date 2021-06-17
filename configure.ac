@@ -891,6 +891,20 @@
 
     AC_CHECK_FUNCS([pthread_spin_unlock])
 
+    # hpfeeds
+
+    AC_CHECK_LIB(hpfeeds, hpf_msg_publish, LHPFEEDS="yes", LHPFEEDS="no")
+
+    if test "$LHPFEEDS" != "no"; then
+        LIBS="${LIBS} -lhpfeeds"
+    else
+        echo
+        echo "   ERROR! hpfeeds not found"
+        echo "   Get it https://github.com/threatstream/hpfeeds"
+        echo
+        exit 1
+    fi
+
   # libjansson
     AC_ARG_WITH(libjansson_includes,
             [  --with-libjansson-includes=DIR  libjansson include directory],

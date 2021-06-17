@@ -239,6 +239,7 @@ const char * TmModuleTmmIdToString(TmmId id)
         CASE_CODE (TMM_RECEIVEWINDIVERT);
         CASE_CODE (TMM_VERDICTWINDIVERT);
         CASE_CODE (TMM_DECODEWINDIVERT);
+        CASE_CODE (TMM_ALERTHPFEEDS);
 
         CASE_CODE (TMM_SIZE);
     }

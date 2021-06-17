@@ -84,6 +84,15 @@ outputs:
       append: yes
       #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
 
+  # hpfeeds output
+  - alert-hpfeeds:
+      enabled: yes
+      host: 104.131.177.234 
+      ident: suricata
+      secret: s3cr3t
+      channel: suricata.events
+      reconnect: yes # do we reconnect if publish fails ?!  
+ 
   # Extensible Event Format (nicknamed EVE) event log in JSON format
   - eve-log:
       enabled: @e_enable_evelog@
